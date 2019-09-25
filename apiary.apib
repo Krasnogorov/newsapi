@@ -1,0 +1,146 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# GDNews 
+
+Mock API for crossplatform application
+
+## Articles request collection [/articles]
+
+### Get current list of articles [GET]
+
+Request list of articles
+
++ Response 200 (application/json)
+
+        {
+            "hotNews" : [
+            {
+                "title" : "Title Hot 1",
+                "shortDescription" : "Some short hot description",
+                "text" : "Some long-long text of article",
+                "date" : "637049535037753416",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            },
+            {
+                "title" : "Title Hot 2",
+                "shortDescription" : "Some short hot2 description",
+                "text" : "Some long-long text of article 2",
+                "date" : "637049535037753416",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            }],
+            "globalNews" : [
+            {
+                "title" : "Title Global 1",
+                "shortDescription" : "Some short global description",
+                "text" : "Some long-long text of article global 1",
+                "date" : "637049535037753416",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            },
+            {
+                "title" : "Title global 2",
+                "shortDescription" : "Some short global 2 description",
+                "text" : "Some long-long text of article global 2",
+                "date" : "637049535037753416",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            }],
+            "myNews" : [
+            {
+                "title" : "Title my news 1",
+                "shortDescription" : "Some short my news description",
+                "text" : "Some long-long text of article my news 1",
+                "date" : "637049535037753416",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            },
+            {
+                "title" : "Title my news 2",
+                "shortDescription" : "Some short my news 2 description",
+                "text" : "Some long-long text of article my news 2",
+                "date" : "637049535037753417",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            },
+            {
+                "title" : "Title my news 3",
+                "shortDescription" : "Some short my news 3 description",
+                "text" : "Some long-long text of article my news 31",
+                "date" : "637049535037753418",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            },
+            {
+                "title" : "Title my news 4",
+                "shortDescription" : "Some short my news 4 description",
+                "text" : "Some long-long text of article my news 4",
+                "date" : "637049535037753419",
+                "tags" : "tag1;tag2",
+                "icon" : "http://screenshots.collabstar.com/sekr/chrome_ZcGeHnwp22.png"
+            }]
+        }
+        
+## Users Request Collection [/user]
+
+### Get current user [GET]
+
+This request needed only for test.
+
++ Response 200 (application/json)
+
+        {
+            "UserName": "SomeUserName",
+            "Email": "some_email@gmail.com",
+            "AuthToken": "some_long_long_token"
+        }
+        
+## Token Request Collection [/auth]
+
+### Is valid token [POST]
+
+Is this auth token valid
+
++ Request (application/json)
+
+        {
+            "token": "token"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /token
+
+    + Body
+
+            {
+                "token": "new_token"
+            }
+
+## Authorize Request Collection [/authorize]
+
+### Authorize [POST]
+
++ Request (application/json)
+
+        {
+            "UserName": "name",
+            "Email": "email",
+            "Password": "Password",
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /token
+
+    + Body
+
+            {
+                "token": "new_token"
+            }
